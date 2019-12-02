@@ -11,7 +11,7 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
                 var h = 400; 
                 
                 // 데이터 받기
-                d3.csv("/accident.csv", function(d){
+                d3.csv("/DataVisualization/accident.csv", function(d){
                     
                     for(var i=0; i<17; i++)
                     {   
