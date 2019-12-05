@@ -2,23 +2,23 @@
 
 var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219, 265, 226, 145, 141, 318, 353]
 
-                
+
                 var i=0;
-                
+
                 var string = ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종', '경기', '강원', '충북', '충남',  '전북', '전남',  '경북',  '경남', '제주']
                 var dataset=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
                 var w = 800;
-                var h = 400; 
+                var h = 400;
 				var margin =20;
 				var padding =20;
                 // 데이터 받기
                 d3.csv("/accident.csv", function(d){
                     for(var i=0; i<17; i++)
-                    {       
+                    {
                         if(d['발생지시도']==string[i])
                             dataset[i]++;
 					}
-					
+
 
 				 });
 				 var newData=[];
@@ -26,14 +26,14 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 				 {
 
 				 }
-    
+
                  setTimeout(() => {
-					 
-					 
-					
+
+
+
 					 console.log(dataset);
 					 console.log(newData);
-            var xScale = d3.scaleBand() 
+            var xScale = d3.scaleBand()
 							.domain(d3.range(dataset.length))
 							.rangeRound([0, w-margin])
 							.paddingInner(0.05);
@@ -41,17 +41,17 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 			var yScale = d3.scaleLinear()
 							.domain([0, d3.max(dataset)])
 							.range([0, h]);
-			
+
 			var yScale2 = d3.scaleLinear()
 							.domain([0, d3.max(dataset)])
 							.range([h, 0]);
 			var x_axis = d3.axisBottom()
 							.tickFormat(function(d,i){ return i; })
 							.scale(xScale);
-			
+
 			var y_axis = d3.axisLeft()
 							.scale(yScale2);
-							
+
 
 			//SVG 원소 생성
 			var svg = d3.select("body")
@@ -59,12 +59,12 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 						.attr("width", w)
 						.attr("height", h)
 						.append("g")
-						
 
-						  
-		
-			
-						
+
+
+
+
+
 
 			//SVG에대하여 막대를 만든다
 			svg.selectAll("rect")
@@ -93,26 +93,26 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 					//Update the tooltip position and value
 					d3.select("#tooltip")
 						.style("left", xPosition + "px")
-						.style("top", yPosition + "px")						
+						.style("top", yPosition + "px")
 						.select("#value")
                         .text(string[i] +" : " + d);
-                        
-			   
+
+
 					//Show the tooltip
 					d3.select("#tooltip").classed("hidden", false);
 
 			   })
 			   .on("mouseout", function() {
-			   
+
 					//Hide the tooltip
 					d3.select("#tooltip").classed("hidden", true);
-					
+
 			   })
 			   .on("click", function() {
 			   		sortBars();
 			   });
-			
-			
+
+
 			   //x축
 			   svg.append("svg:g")
 			   .attr("class", "xaxis")
@@ -129,7 +129,7 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 
 			//Define sort order flag
 			var sortOrder = false;
-			
+
 			//Define sort function
 			var sortBars = function() {
 
@@ -153,31 +153,10 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 				   		return xScale(i)+margin;
 				   });
 
-				
-				
 
-			   
+
+
+
 
 			};
                     }, 2000);
-
-                    	
-                     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
