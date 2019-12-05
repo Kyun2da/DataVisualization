@@ -1,7 +1,7 @@
  rect:hover {
    /*여긴 index3을 제외한 나머지 활성화*/
     /*fill: orange;*/
-    fill: black;
+    fill: orange;
   }
   
   #tooltip {

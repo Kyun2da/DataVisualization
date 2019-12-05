@@ -17,10 +17,22 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
                     {       
                         if(d['발생지시도']==string[i])
                             dataset[i]++;
-                    }
-                 });
+					}
+					
+
+				 });
+				 var newData=[];
+				 for(i=0; i<17; i++)
+				 {
+
+				 }
     
                  setTimeout(() => {
+					 
+					 
+					
+					 console.log(dataset);
+					 console.log(newData);
             var xScale = d3.scaleBand() 
 							.domain(d3.range(dataset.length))
 							.rangeRound([0, w-margin])
@@ -30,12 +42,15 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 							.domain([0, d3.max(dataset)])
 							.range([0, h]);
 			
-			
+			var yScale2 = d3.scaleLinear()
+							.domain([0, d3.max(dataset)])
+							.range([h, 0]);
 			var x_axis = d3.axisBottom()
+							.tickFormat(function(d,i){ return i; })
 							.scale(xScale);
 			
 			var y_axis = d3.axisLeft()
-							.scale(yScale);
+							.scale(yScale2);
 							
 
 			//SVG 원소 생성
@@ -97,17 +112,18 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 			   		sortBars();
 			   });
 			
+			
 			   //x축
 			   svg.append("svg:g")
-			   .attr("class", "x axis")
+			   .attr("class", "xaxis")
 			   .attr("transform", "translate("+margin+","+(h-margin)+")")
 			   .style("fill", "red")
 			   .call(x_axis);
 
 			   //y축
 			   svg.append("svg:g")
-			   .attr("class", "y axis")
-			   .attr("transform", "translate("+margin+","+(-margin)+")")
+			   .attr("class", "yaxis")
+			   .attr("transform", "translate(25,"+(-margin)+")")
 			   .style("fill", "red")
 			   .call(y_axis);
 
@@ -137,7 +153,10 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 				   		return xScale(i)+margin;
 				   });
 
+				
+				
 
+			   
 
 			};
                     }, 2000);
