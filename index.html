@@ -1,52 +1,174 @@
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" href="index.css">
-        <script src="d3/d3.js"></script>
-        <title>데이터 시각화 과제</title>
-    </head>
-    <body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="d3/d3.js"></script>
+    <title>데이터 시각화 과제</title>
+  </head>
+  <body>
+    <div>
+      <div class="btn__section1">
+        section-1
+      </div>
+      <div class="btn__section2">
+        section-2
+      </div>
+      <div class="btn__section3">
+        section-3
+      </div>
+      <div class="btn__section4">
+        section-4
+      </div>
+      <div class="btn__section5">
+        section-5
+      </div>
+      <div class="btn__section6">
+        section-6
+      </div>
+    </div>
+    <div>
+      <label
+        ><input
+          type="checkbox"
+          class="chkbox__section1"
+          checked
+        />section-1</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="chkbox__section2"
+          checked
+        />section-2</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="chkbox__section3"
+          checked
+        />section-3</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="chkbox__section4"
+          checked
+        />section-4</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="chkbox__section5"
+          checked
+        />section-5</label
+      >
+      <label
+        ><input
+          type="checkbox"
+          class="chkbox__section6"
+          checked
+        />section-6</label
+      >
+    </div>
     <!--이밑에부분 주석 해제하면 index2.js(첫번째 시각화)와 연동됨-->
-         <!-- <script src ="index2.js"></script> -->
+    <div class="section-1">
+      <script src="index2.js"></script>
+    </div>
 
     <!-- 이밑에부분 주석 해제하면 index3.js(두번째 시각화)와 연동됨 -->
-        
-         
-            <h1>지역별 사망 인원 수</h1>
-            <svg class="bar-chart"></svg>
-        <div id="tooltip" class="hidden">
-            <p><strong>지역별 사망 인원 수 : </strong></p>
-			<p><span id="value">100</span>명</p>
-        </div> 
-        <script src="index3.js"></script>
-        
+    <div class="section-2">
+      <h1>지역별 사망 인원 수</h1>
+      <svg class="bar-chart"></svg>
+      <div id="tooltip" class="hidden">
+        <p><strong>지역별 사망 인원 수 : </strong></p>
+        <p><span id="value">100</span>명</p>
+      </div>
+      <script src="index3.js"></script>
+    </div>
 
-    <!-- 이밑에부분 주석 해제하면 index4.js(세번째 시각화)와 연동됨 -->   
+    <!-- 이밑에부분 주석 해제하면 index4.js(세번째 시각화)와 연동됨 -->
+    <div class="section-3">
+      <div id="tooltip__1" class="hidden">
+        <p><strong>날짜별 사상자 수 : </strong></p>
+        <p><span id="value">100</span></p>
+      </div>
+      <script src="index4.js"></script>
+      <h1>날짜별 사상자수 캘린더뷰</h1>
+    </div>
 
-        <!-- <div id="tooltip" class="hidden">
-            <p><strong>날짜별 사상자 수 : </strong></p>
-            <p><span id="value">100</span></p>
-        </div>
-       <script src="index4.js"></script> 
-        <h1>날짜별 사상자수 캘린더뷰</h1> -->
-    
-        
     <!-- 이밑에부분 주석 해제하면 index5.js(네번째 시각화)와 연동됨 -->
-        <!-- <h1 class="index5">년도별 일일 사상자수 Bubble Chart</h1>
-        <div id="chart"></div>
-        <div id="tooltip2" class="hidden">
-            <p><strong>날짜별 사상자 수 : </strong></p>
-            <p><span id="value">100</span></p>
-        <script src="index5.js"></script> -->
-
+    <div class="section-4">
+      <div>
+        그래프4
+      </div>
+      <!-- <h1 class="index5">년도별 일일 사상자수 Bubble Chart</h1>
+      <div id="chart"></div>
+      <div id="tooltip2" class="hidden">
+          <p><strong>날짜별 사상자 수 : </strong></p>
+          <p><span id="value">100</span></p>
+      <script src="index5.js"></script> -->
+    </div>
 
     <!-- 이밑에부분 주석 해제하면 index6.js(다섯번째 시각화)와 연동됨 -->
-    <!--
-    <h1>지역별 교통사고 증감 현황</h1>
-    <div id="tooltip3" class="hidden">
+    <div class="section-5">
+      <h1>지역별 교통사고 증감 현황</h1>
+      <div id="tooltip3" class="hidden">
         <p><strong>년도별 사고 수 : </strong></p>
         <p><span id="value">100</span></p>
-    <script src="index6.js"></script>
-    -->
-    </body>
+        <script src="index6.js"></script>
+      </div>
+    </div>
+
+    <div class="section-6">
+      <div id="bubble-chart"></div>
+      <script src="index7.js"></script>
+      <label
+        ><input
+          type="radio"
+          name="section6-rdo"
+          class="rdobutton__section6-1"
+          value="1"
+          checked
+        />전체</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="section6-rdo"
+          class="rdobutton__section6-2"
+          value="2"
+        />안전운전 의무 불이행</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="section6-rdo"
+          class="rdobutton__section6-3"
+          value="3"
+        />신호위반</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="section6-rdo"
+          class="rdobutton__section6-4"
+          value="4"
+        />보행자 보호의무 위반</label
+      >
+      <label
+        ><input
+          type="radio"
+          name="section6-rdo"
+          class="rdobutton__section6-5"
+          value="5"
+        />안전거리 미확보</label
+      >
+    </div>
+  </body>
+  <script src="myjs.js"></script>
 </html>
