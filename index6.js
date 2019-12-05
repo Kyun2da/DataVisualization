@@ -145,8 +145,8 @@ setTimeout(() => {
     else if (i <= 118) dataset_52[i % 17][6] = dataset_5[i].사고수;
   }
 
-  var w = 1300;
-  var h = 1100;
+  var w = 1000;
+  var h = 800;
   var padding = 30;
 
   var svg = d3
@@ -211,24 +211,24 @@ setTimeout(() => {
     .enter()
     .append("circle")
     .attr("cx", function(d) {
-      return (d.Date - 2011) * 150;
+      return (d.Date - 2011) * 100;
     })
     .attr("cy", function(d) {
-      return h - d.사고수 - 100;
+      return (h - d.사고수)*0.5+200 ;
     })
     .attr("r", function(d) {
-      return 10;
+      return 5;
     })
     .attr("fill", function(d, i) {
       return colors[i % 17];
     })
     .on("mouseover", function(d) {
-      var xPosition = parseFloat(d3.select(this).attr("x")) + 14;
-      var yPosition = parseFloat(d3.select(this).attr("y")) + 14;
+      var xPosition = parseFloat(d3.select(this).attr("cx")) + 14;
+      var yPosition = parseFloat(d3.select(this).attr("cy")) + 14;
 
       d3.select("#tooltip3")
-        .style("left", 500 + "px")
-        .style("top", 50 + "px")
+        .style("left", xPosition + "px")
+        .style("top", yPosition+200 + "px")
         .select("#value")
         .text(
           "지역 :" +
@@ -253,10 +253,10 @@ setTimeout(() => {
   var dataset_53 = [2012, 2013, 2014, 2015, 2016, 2017, 2018];
   for (var i = 0; i <= 15; i++) {
     for (var j = 0; j < 6; j++) {
-      var x1 = (dataset_53[j] - 2011) * 150;
-      var x2 = (dataset_53[j + 1] - 2011) * 150;
-      var y1 = h - dataset_52[i][j] - 100;
-      var y2 = h - dataset_52[i][j + 1] - 100;
+      var x1 = (dataset_53[j] - 2011) * 100;
+      var x2 = (dataset_53[j + 1] - 2011) * 100;
+      var y1 = (h - dataset_52[i][j])*0.5+200 ;
+      var y2 = (h - dataset_52[i][j + 1])*0.5+200 ;
       svg
         .append("line")
         .attr("x1", x1)
@@ -272,15 +272,15 @@ setTimeout(() => {
   for (var k = 0; k < 17; k++) {
     svg
       .append("circle")
-      .attr("cx", 50 * k + 450)
+      .attr("cx", 50 * k + 150)
       .attr("cy", 25)
-      .attr("r", 25)
+      .attr("r", 10)
       .attr("fill", colors[k]);
 
     svg
       .append("text")
       .text(dataset_5[k].지역)
-      .attr("x", 50 * k + 427)
+      .attr("x", 50 * k + 127)
       .attr("y", 75)
       .attr("font-family", "sans-serif")
       .attr("font-size", "20px")

@@ -161,7 +161,7 @@ setTimeout(() => {
 
       d3.select("#tooltip__1")
         .style("left", xPosition + "px")
-        .style("top", yPosition + "px")
+        .style("top", yPosition+300 + "px")
         .select("#value")
         .text(d.사상자수 + "명" + "    " + d.Date + " " + d.요일);
 

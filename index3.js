@@ -54,7 +54,7 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 
 
 			//SVG 원소 생성
-			var svg = d3.select("body")
+			var svg = d3.select(".section-2")
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h)
@@ -93,7 +93,7 @@ var population = [16034, 4416, 2773, 2764, 2980, 2813, 1088, 653, 1279, 90, 219,
 					//Update the tooltip position and value
 					d3.select("#tooltip")
 						.style("left", xPosition + "px")
-						.style("top", yPosition + "px")
+						.style("top", yPosition+300 + "px")
 						.select("#value")
                         .text(string[i] +" : " + d);
 
