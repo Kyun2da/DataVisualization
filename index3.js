@@ -41,47 +41,53 @@ var string = [
   "경남",
   "제주"
 ];
-var dataset_2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var dataset = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var w = 800;
 var h = 400;
-
+var margin = 20;
+var padding = 20;
 // 데이터 받기
-d3.csv("./accident.csv", function(d) {
+d3.csv("/accident.csv", function(d) {
   for (var i = 0; i < 17; i++) {
-    if (d["발생지시도"] == string[i]) dataset_2[i]++;
+    if (d["발생지시도"] == string[i]) dataset[i]++;
   }
 });
 
 setTimeout(() => {
   var xScale = d3
     .scaleBand()
-    .domain(d3.range(dataset_2.length))
-    .rangeRound([0, w])
+    .domain(d3.range(dataset.length))
+    .rangeRound([0, w - margin])
     .paddingInner(0.05);
 
   var yScale = d3
     .scaleLinear()
-    .domain([0, d3.max(dataset_2)])
+    .domain([0, d3.max(dataset)])
     .range([0, h]);
+
+  var x_axis = d3.axisBottom().scale(xScale);
+
+  var y_axis = d3.axisLeft().scale(yScale);
 
   //SVG 원소 생성
   var svg = d3
-    .select(".section-2")
+    .select("body")
     .append("svg")
     .attr("width", w)
-    .attr("height", h);
+    .attr("height", h)
+    .append("g");
 
   //SVG에대하여 막대를 만든다
   svg
     .selectAll("rect")
-    .data(dataset_2)
+    .data(dataset)
     .enter()
     .append("rect")
     .attr("x", function(d, i) {
-      return xScale(i);
+      return xScale(i) + margin;
     })
     .attr("y", function(d) {
-      return h - yScale(d);
+      return h - yScale(d) - margin;
     })
     .attr("width", xScale.bandwidth())
     .attr("height", function(d) {
@@ -114,6 +120,22 @@ setTimeout(() => {
       sortBars();
     });
 
+  //x축
+  svg
+    .append("svg:g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(" + margin + "," + (h - margin) + ")")
+    .style("fill", "red")
+    .call(x_axis);
+
+  //y축
+  svg
+    .append("svg:g")
+    .attr("class", "y axis")
+    .attr("transform", "translate(" + margin + "," + -margin + ")")
+    .style("fill", "red")
+    .call(y_axis);
+
   //Define sort order flag
   var sortOrder = false;
 
@@ -135,9 +157,9 @@ setTimeout(() => {
       .delay(function(d, i) {
         return i * 50;
       })
-      .duration(1000)
+      .duration(500)
       .attr("x", function(d, i) {
-        return xScale(i);
+        return xScale(i) + margin;
       });
   };
 }, 2000);
