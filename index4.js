@@ -1,4 +1,30 @@
+//캘린더 뷰 
 dataset_3 = [];
+dataset_3_1 = [];
+
+//모달
+var modal = document.getElementById('myModal');
+
+//span
+var span = document.getElementsByClassName("close")[0];    
+
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+      modal.style.display = "none";
+  }
+}
+
+var modaltext=document.getElementsByClassName("modal-text")[0];
+
+//여기까지가 모달에관한내용
+
 var i = 0;
 var week = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
 function pad(n, width) {
@@ -46,7 +72,12 @@ d3.csv("./accident.csv", function(d) {
     }
 });
 
+d3.csv("./accident.csv", function(d){
+  dataset_3_1.push(d);
+});
 setTimeout(() => {
+  console.log(dataset_3);
+  console.log(dataset_3_1);
   var count = 0;
   for (var i = 0; i < 365; i++) {
     var today = new Date(dataset_3[i].Date).getDay();
@@ -169,8 +200,36 @@ setTimeout(() => {
     })
     .on("mouseout", function() {
       d3.select("#tooltip__1").classed("hidden", true);
+    })
+    .on("click",function(d){ 
+        modal.style.display = "block";
+        var text1 = "";
+        var count =0;
+        for(var i=0; i<3657; i++)
+      {
+        
+        if(d.Date==dataset_3_1[i].발생년월일시분)
+        {
+          count ++;
+          console.log(dataset_3_1[i]);
+          text1=text1.concat(
+          "　"+ count+ ". " + 
+          dataset_3_1[i].주야+ "간 " + 
+          dataset_3_1[i].발생지시도 + " " + 
+          dataset_3_1[i].발생지시군구+ " " + 
+          dataset_3_1[i].도로형태 + "에서 " + 
+          dataset_3_1[i].가해자_당사자종별 + "가 " + 
+          dataset_3_1[i].피해자_당사자종별 + "를침 " + 
+          dataset_3_1[i].사망자수 + "명이 죽고 " + 
+          +dataset_3_1[i].중상자수 + "명이 중상이고 "+ dataset_3_1[i].경상자수 + "명이 다침" 
+           + "<br></br>"
+          ) 
+        }
+      }
+      console.log(text1);
+      modaltext.innerHTML = text1;
     });
-
+    //modaltext.innerText("굿");
   //텍스트 달기
   svg
     .selectAll("text")

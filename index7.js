@@ -15,7 +15,7 @@ function readAndDraw() {
   d3.csv("./accident.csv")
     .then(data => {
       data.map(val => {
-        console.log(val["법규위반"]);
+        //console.log(val["법규위반"]);
         if (condition === "") {
           if (val["가해자_당사자종별_대분류"] === "승용차") {
             dataset_6.children[0].Count++;
