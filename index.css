@@ -236,3 +236,77 @@ circle:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+
+
+svg {
+    
+    background-color: lightskyblue;
+  }
+  .municipality {
+      fill: #eee;
+      stroke: #000000;
+  }
+  .municipality:hover {
+      fill: orange;
+  }
+
+  
+
+#opts{
+  width: 200px;
+padding: .8em .5em;
+border: 1px solid #999;
+font-family: inherit;
+border-radius: 0px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+z-index: 1;
+}
+
+#tooltip {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    padding: 10px;
+    background-color: white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+  
+  #tooltip.hidden {
+    display: none;
+  }
+  
+  #tooltip p {
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 30px;
+    line-height: 20px;
+  }
+
+   /*svg { background-color: #eee; }
+    svg .municipality { fill: red; }*/
+    svg .municipality:hover { stroke: #333; }
+    svg .municipality.p0 { fill: rgb(247,251,255); }
+    svg .municipality.p1 { fill: rgb(222,235,247); }
+    svg .municipality.p2 { fill: rgb(198,219,239); }
+    svg .municipality.p3 { fill: rgb(158,202,225); }
+    svg .municipality.p4 { fill: rgb(107,174,214); }
+    svg .municipality.p5 { fill: rgb(66,146,198); }
+    svg .municipality.p6 { fill: rgb(33,113,181); }
+    svg .municipality.p7 { fill: rgb(8,81,156); }
+    svg .municipality.p8 { fill: rgb(8,48,107); }
+  
+
+/*두번째 시각화 css*/
+    .svg:hover {
+      fill: orange;
+  }
