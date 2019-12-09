@@ -150,8 +150,30 @@ circle:hover {
   .RdYlGn .q9-11{fill:rgb(26,152,80)}
   .RdYlGn .q10-11{fill:rgb(0,104,55)} */
 
+.section-chkbox {
+  position: fixed;
+  right: 0;
+  width: 130px;
+}
+.section-chkbox > label {
+  display: block;
+  transform: scale(2);
+  margin-top: 50px;
+}
+
+.section-1,
+.section-2,
+.section-3,
+.section-4,
+.section-5,
+.section-6 {
+  float: left;
+  width: 40%;
+  text-align: center;
+}
+
 .section-1 {
-  display: none;
+  display: block;
 }
 
 .section-2 {
@@ -171,5 +193,10 @@ circle:hover {
 }
 
 .section-6 {
-  display: block;
+  display: none;
+}
+
+.section-6-title {
+  font-size: 40px;
+  font-weight: 700;
 }

@@ -71,7 +71,7 @@ setTimeout(() => {
 
   //SVG 원소 생성
   var svg = d3
-    .select("body")
+    .select(".section-2")
     .append("svg")
     .attr("width", w)
     .attr("height", h)

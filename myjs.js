@@ -132,5 +132,5 @@ $("input:radio[name=section6-rdo]").click(function() {
     condition = "안전거리 미확보";
   }
   $(".bubble").remove();
-  readAndDraw();
+  readAndDraw($("input:radio[name=section6-rdo]:checked").val() * 1);
 });
