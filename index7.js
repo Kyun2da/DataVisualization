@@ -1,6 +1,6 @@
 let condition = "";
 
-function readAndDraw() {
+function readAndDraw(num) {
   dataset_6 = {
     children: [
       { Name: "승용차", Count: 0 },
@@ -15,7 +15,6 @@ function readAndDraw() {
   d3.csv("./accident.csv")
     .then(data => {
       data.map(val => {
-        //console.log(val["법규위반"]);
         if (condition === "") {
           if (val["가해자_당사자종별_대분류"] === "승용차") {
             dataset_6.children[0].Count++;
@@ -63,6 +62,21 @@ function readAndDraw() {
       });
     })
     .then(() => {
+      if (num === 1) {
+        $(".section-6-title").text("법규위반 별 가해자 종류 - 전체");
+      } else if (num === 2) {
+        $(".section-6-title").text(
+          "법규위반 별 가해자 종류 - 안전운전 의무 불이행"
+        );
+      } else if (num === 3) {
+        $(".section-6-title").text("법규위반 별 가해자 종류 - 신호위반");
+      } else if (num === 4) {
+        $(".section-6-title").text(
+          "법규위반 별 가해자 종류 - 보행자 보호의무 위반"
+        );
+      } else if (num === 5) {
+        $(".section-6-title").text("법규위반 별 가해자 종류 - 안전거리 미확보");
+      }
       var diameter = 600;
       var color = d3.scaleOrdinal(d3.schemeCategory10);
 
@@ -137,4 +151,4 @@ function readAndDraw() {
       d3.select(self.frameElement).style("height", diameter + "px");
     });
 }
-readAndDraw();
+readAndDraw(1);
