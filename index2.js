@@ -952,7 +952,7 @@ let data = {
     }
   ]
 };
-d3.csv("./accident.csv")
+d3.csv("/DataVisualization/accident.csv")
   .then(val => {
     val.map(val => {
       if (val["가해자_당사자종별"] === "승용차") {

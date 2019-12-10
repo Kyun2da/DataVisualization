@@ -60,7 +60,7 @@ function ready([data]) {
     .on("click", clicked);
 }
 
-d3.csv("/accident.csv").then(function(data) {
+d3.csv("/DataVisualization/accident.csv").then(function(data) {
   points
     .selectAll("circle")
     .data(data)
