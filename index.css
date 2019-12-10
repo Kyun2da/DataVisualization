@@ -1,3 +1,6 @@
+body {
+  margin: 0;
+}
 rect:hover {
   /*여긴 index3을 제외한 나머지 활성화*/
   /*fill: orange;*/
@@ -151,33 +154,43 @@ circle:hover {
   .RdYlGn .q10-11{fill:rgb(0,104,55)} */
 
 .section-chkbox {
-  position: fixed;
-  right: 0;
-  width: 130px;
+  display: flex;
+  height: 50px;
+  margin-bottom: 20px;
+  text-align: center;
 }
-.section-chkbox > label {
-  display: block;
-  transform: scale(2);
-  margin-top: 50px;
+
+.btn__section1,
+.btn__section2,
+.btn__section3,
+.btn__section4,
+.btn__section5 {
+  padding-top: 15px;
+  flex: 1;
 }
 
 .section-1,
 .section-2,
 .section-3,
 .section-4,
-.section-5,
-.section-6 {
-  float: left;
-  width: 40%;
+.section-5 {
+  margin: 0 auto;
   text-align: center;
+}
+
+.on {
+  background: black;
+  color: white;
 }
 
 .section-1 {
   display: block;
+  width: 500px;
 }
 
 .section-2 {
   display: none;
+  margin: none;
 }
 
 .section-3 {
@@ -190,15 +203,6 @@ circle:hover {
 
 .section-5 {
   display: none;
-}
-
-.section-6 {
-  display: none;
-}
-
-.section-6-title {
-  font-size: 40px;
-  font-weight: 700;
 }
 
 /* 모달 */
@@ -237,36 +241,50 @@ circle:hover {
   cursor: pointer;
 }
 
-
-
-
-
 /*두번째 시각화 css*/
-    .svg:hover {
-      fill: orange;
-  }
+.svg:hover {
+  fill: orange;
+}
 
-  #map-chart svg { background-color: lightskyblue; }
-  svg text { pointer-events: none; }
-  svg .province {
-      fill: #fff;
-      stroke: black;
-  }
-  svg .province.c11 { fill: #ddd; }
-  svg .province.c21 { fill: #dcd; }
-  svg .province.c22 { fill: #cdd; }
-  svg .province.c23 { fill: #ccd; }
-  svg .province.c24 { fill: #cdc; }
-  svg .province.c25 { fill: #dcc; }
-  svg .province.c26 { fill: #ddc; }
-  svg .province:hover {
-      fill: orange;
-  }
-  svg text {
-      font-size: 10px;
-  }
+#map-chart svg {
+  background-color: lightskyblue;
+}
+svg text {
+  pointer-events: none;
+}
+svg .province {
+  fill: #fff;
+  stroke: black;
+}
+svg .province.c11 {
+  fill: #ddd;
+}
+svg .province.c21 {
+  fill: #dcd;
+}
+svg .province.c22 {
+  fill: #cdd;
+}
+svg .province.c23 {
+  fill: #ccd;
+}
+svg .province.c24 {
+  fill: #cdc;
+}
+svg .province.c25 {
+  fill: #dcc;
+}
+svg .province.c26 {
+  fill: #ddc;
+}
+svg .province:hover {
+  fill: orange;
+}
+svg text {
+  font-size: 10px;
+}
 
-  /* 모달2 */
+/* 모달2 */
 .modal2 {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */

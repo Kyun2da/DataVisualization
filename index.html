@@ -12,43 +12,21 @@
   </head>
   <body>
     <div class="section-chkbox">
-      <label
-        ><input
-          type="checkbox"
-          class="chkbox__section1"
-          checked
-        />section-1</label
-      >
-      <label
-        ><input
-          type="checkbox"
-          class="chkbox__section2"
-        />section-2</label
-      >
-      <label
-        ><input
-          type="checkbox"
-          class="chkbox__section3"
-        />section-3</label
-      >
-      <label
-        ><input
-          type="checkbox"
-          class="chkbox__section4"
-        />section-4</label
-      >
-      <label
-        ><input
-          type="checkbox"
-          class="chkbox__section5"
-        />section-5</label
-      >
-      <label
-        ><input
-          type="checkbox"
-          class="chkbox__section6"
-        />section-6</label
-      >
+      <div class="btn__section1 on">
+        가해자 별 법규위반
+      </div>
+      <div class="btn__section2">
+        지역별 사망 인원 수
+      </div>
+      <div class="btn__section3">
+        날짜별 사상자수 캘린더
+      </div>
+      <div class="btn__section4">
+        사망교통사고 지도
+      </div>
+      <div class="btn__section5">
+        지역별 교통사고 증감 현황
+      </div>
     </div>
     <!--이밑에부분 주석 해제하면 index2.js(첫번째 시각화)와 연동됨-->
     <div class="section-1">
@@ -57,7 +35,6 @@
 
     <!-- 이밑에부분 주석 해제하면 index3.js(두번째 시각화)와 연동됨 -->
     <div class="section-2">
-      <h1>지역별 사망 인원 수</h1>
       <svg class="bar-chart"></svg>
       <div id="tooltip" class="hidden">
         <p><strong>지역별 사망 인원 수 : </strong></p>
@@ -74,7 +51,6 @@
       </div>
       <!-- The Modal -->
       <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -82,83 +58,31 @@
         </div>
         <script src="index4.js"></script>
       </div>
-      <h1>날짜별 사상자수 캘린더뷰</h1>
     </div>
 
     <!-- 이밑에부분 주석 해제하면 index5.js(네번째 시각화)와 연동됨 -->
     <div class="section-4">
       <div>
-          <div id="myModal2" class="modal2">
-
-              <!-- Modal content -->
-              <div class="modal-content2">
-                <span class="close2">&times;</span>
-                <p class="modal-text2">Some text in the Modal..</p>
-              </div>
-
+        <div id="myModal2" class="modal2">
+          <!-- Modal content -->
+          <div class="modal-content2">
+            <span class="close2">&times;</span>
+            <p class="modal-text2">Some text in the Modal..</p>
           </div>
-          <script src="https://d3js.org/topojson.v2.min.js"></script>
-          <div id="map-chart"></div>
-          <script src ="map_Data.js"></script>
-
+        </div>
+        <script src="https://d3js.org/topojson.v2.min.js"></script>
+        <div id="map-chart"></div>
+        <script src="map_Data.js"></script>
       </div>
     </div>
 
     <!-- 이밑에부분 주석 해제하면 index6.js(다섯번째 시각화)와 연동됨 -->
     <div class="section-5">
-      <h1>지역별 교통사고 증감 현황</h1>
       <div id="tooltip3" class="hidden">
         <p><strong>년도별 사고 수 : </strong></p>
         <p><span id="value">100</span></p>
         <script src="index6.js"></script>
       </div>
-    </div>
-
-    <div class="section-6">
-      <span class="section-6-title"></span>
-      <div id="bubble-chart"></div>
-      <script src="index7.js"></script>
-      <label
-        ><input
-          type="radio"
-          name="section6-rdo"
-          class="rdobutton__section6-1"
-          value="1"
-          checked
-        />전체</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="section6-rdo"
-          class="rdobutton__section6-2"
-          value="2"
-        />안전운전 의무 불이행</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="section6-rdo"
-          class="rdobutton__section6-3"
-          value="3"
-        />신호위반</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="section6-rdo"
-          class="rdobutton__section6-4"
-          value="4"
-        />보행자 보호의무 위반</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="section6-rdo"
-          class="rdobutton__section6-5"
-          value="5"
-        />안전거리 미확보</label
-      >
     </div>
   </body>
   <script src="myjs.js"></script>

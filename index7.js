@@ -63,19 +63,15 @@ function readAndDraw(num) {
     })
     .then(() => {
       if (num === 1) {
-        $(".section-6-title").text("법규위반 별 가해자 종류 - 전체");
+        $(".section-6-title").text("- 전체 -");
       } else if (num === 2) {
-        $(".section-6-title").text(
-          "법규위반 별 가해자 종류 - 안전운전 의무 불이행"
-        );
+        $(".section-6-title").text("- 안전운전 의무 불이행 -");
       } else if (num === 3) {
-        $(".section-6-title").text("법규위반 별 가해자 종류 - 신호위반");
+        $(".section-6-title").text("- 신호위반 -");
       } else if (num === 4) {
-        $(".section-6-title").text(
-          "법규위반 별 가해자 종류 - 보행자 보호의무 위반"
-        );
+        $(".section-6-title").text("- 보행자 보호의무 위반 -");
       } else if (num === 5) {
-        $(".section-6-title").text("법규위반 별 가해자 종류 - 안전거리 미확보");
+        $(".section-6-title").text("- 안전거리 미확보 -");
       }
       var diameter = 600;
       var color = d3.scaleOrdinal(d3.schemeCategory10);
