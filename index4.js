@@ -76,8 +76,8 @@ d3.csv("./accident.csv", function(d){
   dataset_3_1.push(d);
 });
 setTimeout(() => {
-  console.log(dataset_3);
-  console.log(dataset_3_1);
+  // console.log(dataset_3);
+  // console.log(dataset_3_1);
   var count = 0;
   for (var i = 0; i < 365; i++) {
     var today = new Date(dataset_3[i].Date).getDay();

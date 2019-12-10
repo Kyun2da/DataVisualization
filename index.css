@@ -239,74 +239,65 @@ circle:hover {
 
 
 
-
-svg {
-    
-    background-color: lightskyblue;
-  }
-  .municipality {
-      fill: #eee;
-      stroke: #000000;
-  }
-  .municipality:hover {
-      fill: orange;
-  }
-
-  
-
-#opts{
-  width: 200px;
-padding: .8em .5em;
-border: 1px solid #999;
-font-family: inherit;
-border-radius: 0px;
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
-z-index: 1;
-}
-
-#tooltip {
-    position: absolute;
-    width: 500px;
-    height: 50px;
-    padding: 10px;
-    background-color: white;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
-    pointer-events: none;
-  }
-  
-  #tooltip.hidden {
-    display: none;
-  }
-  
-  #tooltip p {
-    margin: 0;
-    font-family: sans-serif;
-    font-size: 30px;
-    line-height: 20px;
-  }
-
-   /*svg { background-color: #eee; }
-    svg .municipality { fill: red; }*/
-    svg .municipality:hover { stroke: #333; }
-    svg .municipality.p0 { fill: rgb(247,251,255); }
-    svg .municipality.p1 { fill: rgb(222,235,247); }
-    svg .municipality.p2 { fill: rgb(198,219,239); }
-    svg .municipality.p3 { fill: rgb(158,202,225); }
-    svg .municipality.p4 { fill: rgb(107,174,214); }
-    svg .municipality.p5 { fill: rgb(66,146,198); }
-    svg .municipality.p6 { fill: rgb(33,113,181); }
-    svg .municipality.p7 { fill: rgb(8,81,156); }
-    svg .municipality.p8 { fill: rgb(8,48,107); }
   
 
 /*두번째 시각화 css*/
     .svg:hover {
       fill: orange;
   }
+
+  #map-chart svg { background-color: lightskyblue; }
+  svg text { pointer-events: none; }
+  svg .province {
+      fill: #fff;
+      stroke: black;
+  }
+  svg .province.c11 { fill: #ddd; }
+  svg .province.c21 { fill: #dcd; }
+  svg .province.c22 { fill: #cdd; }
+  svg .province.c23 { fill: #ccd; }
+  svg .province.c24 { fill: #cdc; }
+  svg .province.c25 { fill: #dcc; }
+  svg .province.c26 { fill: #ddc; }
+  svg .province:hover {
+      fill: orange;
+  }
+  svg text {
+      font-size: 10px;
+  }
+
+  /* 모달2 */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content2 {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button */
+.close2 {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close2:hover,
+.close2:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
