@@ -167,6 +167,7 @@ circle:hover {
 .btn__section5 {
   padding-top: 15px;
   flex: 1;
+  cursor: pointer;
 }
 
 .section-1,
@@ -185,7 +186,7 @@ circle:hover {
 
 .section-1 {
   display: block;
-  width: 500px;
+  width: 600px;
 }
 
 .section-2 {
