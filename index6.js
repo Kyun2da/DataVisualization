@@ -227,7 +227,7 @@ setTimeout(() => {
       var yPosition = parseFloat(d3.select(this).attr("cy")) + 14;
 
       d3.select("#tooltip3")
-        .style("left", xPosition + "px")
+        .style("left", xPosition + 500+"px")
         .style("top", yPosition + "px")
         .select("#value")
         .text(
