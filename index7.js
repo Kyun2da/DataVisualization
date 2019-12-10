@@ -12,7 +12,7 @@ function readAndDraw(num) {
     ]
   };
 
-  d3.csv("/accident.csv")
+  d3.csv("/DataVisualization/accident.csv")
     .then(data => {
       data.map(val => {
         if (condition === "") {

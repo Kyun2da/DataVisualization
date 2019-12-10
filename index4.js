@@ -62,7 +62,7 @@ for (var i = 1; i <= 12; i++) {
   }
 }
 
-d3.csv("/accident.csv", function(d) {
+d3.csv("/DataVisualization/accident.csv", function(d) {
   //dataset_3.push(d);
   for (var i = 0; i < 365; i++)
     if (d["발생년월일시분"] == dataset_3[i].Date) {
@@ -71,7 +71,7 @@ d3.csv("/accident.csv", function(d) {
     }
 });
 
-d3.csv("/accident.csv", function(d) {
+d3.csv("/DataVisualization/accident.csv", function(d) {
   dataset_3_1.push(d);
 });
 setTimeout(() => {
