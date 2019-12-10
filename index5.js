@@ -54,7 +54,7 @@ for (var y = 2012; y <= 2018; y++) {
 }
 
 //2018년 데이터파싱
-d3.csv("DataVisualization/accident.csv", function(d) {
+d3.csv("/accident.csv", function(d) {
   for (var i = 0; i < 2557; i++)
     if (d["발생년월일시분"] == dataset_4[i].Date) {
       dataset_4[i].사고수 += 1;
@@ -64,7 +64,7 @@ d3.csv("DataVisualization/accident.csv", function(d) {
     }
 });
 //2012~2014년 데이터 파싱
-d3.csv("DataVisualization/accident_2012to2014.csv", function(d) {
+d3.csv("/accident_2012to2014.csv", function(d) {
   for (var i = 0; i < 2557; i++)
     if (d["발생년월일시분"] == dataset_4[i].Date) {
       dataset_4[i].사고수 += 1;
@@ -75,7 +75,7 @@ d3.csv("DataVisualization/accident_2012to2014.csv", function(d) {
 });
 
 //2015년 데이터파싱
-d3.csv("DataVisualization/accident_2015.csv", function(d) {
+d3.csv("/accident_2015.csv", function(d) {
   for (var i = 0; i < 2557; i++)
     if (d["발생년월일시분"] == dataset_4[i].Date) {
       dataset_4[i].사고수 += 1;
@@ -86,7 +86,7 @@ d3.csv("DataVisualization/accident_2015.csv", function(d) {
 });
 
 //2016년 데이터파싱
-d3.csv("DataVisualization/accident_2016.csv", function(d) {
+d3.csv("/accident_2016.csv", function(d) {
   for (var i = 0; i < 2557; i++)
     if (d["발생년월일시분"] == dataset_4[i].Date) {
       dataset_4[i].사고수 += 1;
@@ -97,7 +97,7 @@ d3.csv("DataVisualization/accident_2016.csv", function(d) {
 });
 
 //2017년 데이터 파싱
-d3.csv("DataVisualization/accident_2017.csv", function(d) {
+d3.csv("/accident_2017.csv", function(d) {
   for (var i = 0; i < 2557; i++)
     if (d["발생년월일시분"] == dataset_4[i].Date) {
       dataset_4[i].사고수 += 1;
