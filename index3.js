@@ -47,7 +47,7 @@ var h = 400;
 var margin = 20;
 var padding = 20;
 // 데이터 받기
-d3.csv("/accident.csv", function(d) {
+d3.csv("DataVisualization/accident.csv", function(d) {
   for (var i = 0; i < 17; i++) {
     if (d["발생지시도"] == string[i]) dataset[i]++;
   }

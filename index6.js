@@ -57,7 +57,7 @@ for (var y = 2012; y <= 2018; y++) {
 }
 
 //2018년 데이터파싱
-d3.csv("./accident.csv", function(d) {
+d3.csv("DataVisualization/accident.csv", function(d) {
   for (
     var i = 102;
     i <= 118;
@@ -71,7 +71,7 @@ d3.csv("./accident.csv", function(d) {
     }
 });
 //2012~2014년 데이터 파싱
-d3.csv("./accident_2012to2014.csv", function(d) {
+d3.csv("DataVisualization/accident_2012to2014.csv", function(d) {
   for (var i = 0; i <= 16; i++)
     if (d["발생지시도"] == string[i] && d["발생년"] == 2012) {
       dataset_5[i].사고수 += 1;
@@ -96,7 +96,7 @@ d3.csv("./accident_2012to2014.csv", function(d) {
 });
 
 //2015년 데이터파싱
-d3.csv("./accident_2015.csv", function(d) {
+d3.csv("DataVisualization/accident_2015.csv", function(d) {
   for (var i = 51; i <= 67; i++)
     if (d["발생지시도"] == string[i - 51]) {
       dataset_5[i].사고수 += 1;
@@ -107,7 +107,7 @@ d3.csv("./accident_2015.csv", function(d) {
 });
 
 //2016년 데이터파싱
-d3.csv("./accident_2016.csv", function(d) {
+d3.csv("DataVisualization/accident_2016.csv", function(d) {
   for (var i = 68; i <= 84; i++)
     if (d["발생지시도"] == string[i - 68]) {
       dataset_5[i].사고수 += 1;
@@ -118,7 +118,7 @@ d3.csv("./accident_2016.csv", function(d) {
 });
 
 //2017년 데이터 파싱
-d3.csv("./accident_2017.csv", function(d) {
+d3.csv("DataVisualization/accident_2017.csv", function(d) {
   for (var i = 85; i <= 101; i++)
     if (d["발생지시도"] == string[i - 85]) {
       dataset_5[i].사고수 += 1;
@@ -214,7 +214,7 @@ setTimeout(() => {
       return (d.Date - 2011) * 100;
     })
     .attr("cy", function(d) {
-      return (h - d.사고수)*0.5+300 ;
+      return (h - d.사고수) * 0.5 + 300;
     })
     .attr("r", function(d) {
       return 5;
@@ -255,8 +255,8 @@ setTimeout(() => {
     for (var j = 0; j < 6; j++) {
       var x1 = (dataset_53[j] - 2011) * 100;
       var x2 = (dataset_53[j + 1] - 2011) * 100;
-      var y1 = (h - dataset_52[i][j])*0.5+300 ;
-      var y2 = (h - dataset_52[i][j + 1])*0.5+300 ;
+      var y1 = (h - dataset_52[i][j]) * 0.5 + 300;
+      var y2 = (h - dataset_52[i][j + 1]) * 0.5 + 300;
       svg
         .append("line")
         .attr("x1", x1)

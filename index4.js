@@ -1,27 +1,26 @@
-//캘린더 뷰 
+//캘린더 뷰
 dataset_3 = [];
 dataset_3_1 = [];
 
 //모달
-var modal = document.getElementById('myModal');
+var modal = document.getElementById("myModal");
 
 //span
-var span = document.getElementsByClassName("close")[0];    
-
+var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-      modal.style.display = "none";
+    modal.style.display = "none";
   }
-}
+};
 
-var modaltext=document.getElementsByClassName("modal-text")[0];
+var modaltext = document.getElementsByClassName("modal-text")[0];
 
 //여기까지가 모달에관한내용
 
@@ -63,7 +62,7 @@ for (var i = 1; i <= 12; i++) {
   }
 }
 
-d3.csv("./accident.csv", function(d) {
+d3.csv("DataVisualization/accident.csv", function(d) {
   //dataset_3.push(d);
   for (var i = 0; i < 365; i++)
     if (d["발생년월일시분"] == dataset_3[i].Date) {
@@ -72,7 +71,7 @@ d3.csv("./accident.csv", function(d) {
     }
 });
 
-d3.csv("./accident.csv", function(d){
+d3.csv("DataVisualization/accident.csv", function(d) {
   dataset_3_1.push(d);
 });
 setTimeout(() => {
@@ -192,7 +191,7 @@ setTimeout(() => {
 
       d3.select("#tooltip__1")
         .style("left", xPosition + "px")
-        .style("top", yPosition+300 + "px")
+        .style("top", yPosition + 300 + "px")
         .select("#value")
         .text(d.사상자수 + "명" + "    " + d.Date + " " + d.요일);
 
@@ -201,35 +200,44 @@ setTimeout(() => {
     .on("mouseout", function() {
       d3.select("#tooltip__1").classed("hidden", true);
     })
-    .on("click",function(d){ 
-        modal.style.display = "block";
-        var text1 = "";
-        var count =0;
-        for(var i=0; i<3657; i++)
-      {
-        
-        if(d.Date==dataset_3_1[i].발생년월일시분)
-        {
-          count ++;
+    .on("click", function(d) {
+      modal.style.display = "block";
+      var text1 = "";
+      var count = 0;
+      for (var i = 0; i < 3657; i++) {
+        if (d.Date == dataset_3_1[i].발생년월일시분) {
+          count++;
           console.log(dataset_3_1[i]);
-          text1=text1.concat(
-          "　"+ count+ ". " + 
-          dataset_3_1[i].주야+ "간 " + 
-          dataset_3_1[i].발생지시도 + " " + 
-          dataset_3_1[i].발생지시군구+ " " + 
-          dataset_3_1[i].도로형태 + "에서 " + 
-          dataset_3_1[i].가해자_당사자종별 + "가 " + 
-          dataset_3_1[i].피해자_당사자종별 + "를침 " + 
-          dataset_3_1[i].사망자수 + "명이 죽고 " + 
-          +dataset_3_1[i].중상자수 + "명이 중상이고 "+ dataset_3_1[i].경상자수 + "명이 다침" 
-           + "<br></br>"
-          ) 
+          text1 = text1.concat(
+            "　" +
+              count +
+              ". " +
+              dataset_3_1[i].주야 +
+              "간 " +
+              dataset_3_1[i].발생지시도 +
+              " " +
+              dataset_3_1[i].발생지시군구 +
+              " " +
+              dataset_3_1[i].도로형태 +
+              "에서 " +
+              dataset_3_1[i].가해자_당사자종별 +
+              "가 " +
+              dataset_3_1[i].피해자_당사자종별 +
+              "를침 " +
+              dataset_3_1[i].사망자수 +
+              "명이 죽고 " +
+              +dataset_3_1[i].중상자수 +
+              "명이 중상이고 " +
+              dataset_3_1[i].경상자수 +
+              "명이 다침" +
+              "<br></br>"
+          );
         }
       }
       console.log(text1);
       modaltext.innerHTML = text1;
     });
-    //modaltext.innerText("굿");
+  //modaltext.innerText("굿");
   //텍스트 달기
   svg
     .selectAll("text")
