@@ -214,7 +214,7 @@ setTimeout(() => {
       return (d.Date - 2011) * 100;
     })
     .attr("cy", function(d) {
-      return (h - d.사고수)*0.5+200 ;
+      return (h - d.사고수)*0.5+300 ;
     })
     .attr("r", function(d) {
       return 5;
@@ -228,7 +228,7 @@ setTimeout(() => {
 
       d3.select("#tooltip3")
         .style("left", xPosition + "px")
-        .style("top", yPosition+200 + "px")
+        .style("top", yPosition + "px")
         .select("#value")
         .text(
           "지역 :" +
@@ -255,8 +255,8 @@ setTimeout(() => {
     for (var j = 0; j < 6; j++) {
       var x1 = (dataset_53[j] - 2011) * 100;
       var x2 = (dataset_53[j + 1] - 2011) * 100;
-      var y1 = (h - dataset_52[i][j])*0.5+200 ;
-      var y2 = (h - dataset_52[i][j + 1])*0.5+200 ;
+      var y1 = (h - dataset_52[i][j])*0.5+300 ;
+      var y2 = (h - dataset_52[i][j + 1])*0.5+300 ;
       svg
         .append("line")
         .attr("x1", x1)
@@ -272,7 +272,7 @@ setTimeout(() => {
   for (var k = 0; k < 17; k++) {
     svg
       .append("circle")
-      .attr("cx", 50 * k + 150)
+      .attr("cx", 50 * k + 135)
       .attr("cy", 25)
       .attr("r", 10)
       .attr("fill", colors[k]);
@@ -280,8 +280,8 @@ setTimeout(() => {
     svg
       .append("text")
       .text(dataset_5[k].지역)
-      .attr("x", 50 * k + 127)
-      .attr("y", 75)
+      .attr("x", 50 * k + 125)
+      .attr("y", 50)
       .attr("font-family", "sans-serif")
       .attr("font-size", "20px")
       .attr("fill", "black");
