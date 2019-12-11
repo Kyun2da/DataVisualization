@@ -117,7 +117,7 @@ setTimeout(() => {
 
       //Update the tooltip position and value
       d3.select("#tooltip")
-        .style("left", xPosition + 750+ "px")
+        .style("left", xPosition + 550+ "px")
         .style("top", yPosition + 0 + "px")
         .select("#value")
         .text(string[i] + " : " + d);

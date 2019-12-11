@@ -190,7 +190,7 @@ setTimeout(() => {
       var yPosition = parseFloat(d3.select(this).attr("y")) + 14;
 
       d3.select("#tooltip__1")
-        .style("left", xPosition +450+ "px")
+        .style("left", xPosition +250+ "px")
         .style("top", yPosition+ "px")
         .select("#value")
         .text(d.사상자수 + "명" + "    " + d.Date + " " + d.요일);
